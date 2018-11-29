@@ -13,12 +13,4 @@ public extension Date {
     var year: String {
         return "\(Calendar.current.component(.year, from: self))"
     }
-
-    var localizedString: String {
-        let dateFormatter = DateFormatter()
-        dateFormatter.timeStyle = .none
-        dateFormatter.dateStyle = .medium
-        dateFormatter.doesRelativeDateFormatting = true
-        return dateFormatter.string(from: self)
-    }
 }
