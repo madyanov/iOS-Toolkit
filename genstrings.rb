@@ -1,6 +1,6 @@
 #!/usr/bin/env ruby
 
-excluded_directories = ['Carthage']
+excluded_directories = ['Pods', 'Carthage']
 excluded_files = []
 
 regex = /"((?:[^"\\]|\\.)*)"[\s]*\.[\s]*localized\([\s]*comment:[\s]*"((?:[^"\\]|\\.)*)"/
