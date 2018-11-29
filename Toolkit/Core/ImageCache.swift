@@ -144,7 +144,7 @@ public final class ImageCache {
             return image
         }
 
-        guard persistent,
+        guard
             let data = try? Data(contentsOf: localURL),
             let image = UIImage(data: data)
         else {
