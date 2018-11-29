@@ -49,6 +49,7 @@
 		309A0AAE21AFF056000625FE /* Functions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 309A0A8A21AFF056000625FE /* Functions.swift */; };
 		309A0AAF21AFF056000625FE /* CoreData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 309A0A8B21AFF056000625FE /* CoreData.swift */; };
 		309A0AB021AFF056000625FE /* ConditionalPropertiesOverwritingMergePolicy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 309A0A8C21AFF056000625FE /* ConditionalPropertiesOverwritingMergePolicy.swift */; };
+		309A0AB321AFF7BD000625FE /* genstrings.rb in Resources */ = {isa = PBXBuildFile; fileRef = 309A0AB221AFF7BD000625FE /* genstrings.rb */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -107,6 +108,7 @@
 		309A0A8A21AFF056000625FE /* Functions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Functions.swift; sourceTree = "<group>"; };
 		309A0A8B21AFF056000625FE /* CoreData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreData.swift; sourceTree = "<group>"; };
 		309A0A8C21AFF056000625FE /* ConditionalPropertiesOverwritingMergePolicy.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConditionalPropertiesOverwritingMergePolicy.swift; sourceTree = "<group>"; };
+		309A0AB221AFF7BD000625FE /* genstrings.rb */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.ruby; path = genstrings.rb; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -134,6 +136,7 @@
 				309A0A5F21AFF007000625FE /* .gitignore */,
 				309A0A6121AFF007000625FE /* .swiftlint.yml */,
 				309A0A6021AFF007000625FE /* Toolkit.podspec */,
+				309A0AB221AFF7BD000625FE /* genstrings.rb */,
 				309A0A4721AFEF71000625FE /* Toolkit */,
 				309A0A5221AFEF71000625FE /* ToolkitTests */,
 				309A0A4621AFEF71000625FE /* Products */,
@@ -330,6 +333,7 @@
 				309A0A6421AFF008000625FE /* .swiftlint.yml in Resources */,
 				309A0A6221AFF008000625FE /* .gitignore in Resources */,
 				309A0A6321AFF008000625FE /* Toolkit.podspec in Resources */,
+				309A0AB321AFF7BD000625FE /* genstrings.rb in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
