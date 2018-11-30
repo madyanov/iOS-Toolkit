@@ -26,28 +26,35 @@ open class CachedImageView: UIImageView {
         blurView.snap()
     }
 
-    open func setImage(with url: URL?, placeholderURL: URL?, persistent: Bool = false) {
-        setImage(with: placeholderURL, persistent: persistent, blur: true) { [weak self] in
-            guard let url = url else {
-                return
-            }
+    open func setImage(with url: URL?, placeholderURL: URL? = nil, persistent: Bool = false) {
+        image = nil
 
-            self?.setImage(with: url, persistent: persistent)
+        if placeholderURL != nil {
+            blurView.effect = UIBlurEffect(style: .light)
+            blurView.isHidden = false
+        }
+
+        setImage(with: placeholderURL, persistent: persistent) {
+            self.setImage(with: url, persistent: persistent) {
+                guard placeholderURL != nil else {
+                    return
+                }
+
+                UIView.animate(withDuration: 0.3, animations: {
+                    self.blurView.effect = nil
+                }, completion: { _ in
+                    self.blurView.isHidden = true
+                })
+            }
         }
     }
 
-    open func setImage(with url: URL?, persistent: Bool = false, blur: Bool = false, completion: (() -> Void)? = nil) {
+    private func setImage(with url: URL?, persistent: Bool = false, completion: (() -> Void)? = nil) {
         urlSessionDataTask?.cancel()
 
         guard let url = url else {
-            image = nil
             completion?()
             return
-        }
-
-        if blur {
-            blurView.effect = UIBlurEffect(style: .light)
-            blurView.isHidden = false
         }
 
         requestID += 1
@@ -67,14 +74,6 @@ open class CachedImageView: UIImageView {
                 options: .transitionCrossDissolve,
                 animations: { self.image = image }
             )
-
-            if !blur {
-                UIView.animate(withDuration: 0.3, animations: {
-                    self.blurView.effect = nil
-                }, completion: { _ in
-                    self.blurView.isHidden = true
-                })
-            }
 
             completion?()
         })

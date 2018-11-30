@@ -90,7 +90,7 @@ public final class ImageCache {
         return urlSessionDataTask
     }
 
-    public func preload(limit: Int = 1000) {
+    public func warmUp(limit: Int = 1000) {
         guard let cachedImagesDirectory = cachedImagesDirectory else {
             return
         }
