@@ -15,7 +15,7 @@ public extension Date {
     }
 }
 
-// MARK: - Date defference
+// MARK: - Date difference
 public extension Date {
     func years(since date: Date) -> Int? {
         return Calendar.current.dateComponents([.year], from: date, to: self).year
