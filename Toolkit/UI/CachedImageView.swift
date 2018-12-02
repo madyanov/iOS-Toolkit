@@ -34,9 +34,9 @@ open class CachedImageView: UIImageView {
             blurView.isHidden = false
         }
 
-        setImage(with: placeholderURL, persistent: persistent) {
-            self.setImage(with: url, persistent: persistent) {
-                guard url != nil, placeholderURL != nil else {
+        setImage(with: placeholderURL, persistent: persistent) { _ in
+            self.setImage(with: url, persistent: persistent) { success in
+                guard success, placeholderURL != nil else {
                     return
                 }
 
@@ -49,11 +49,11 @@ open class CachedImageView: UIImageView {
         }
     }
 
-    private func setImage(with url: URL?, persistent: Bool = false, completion: (() -> Void)? = nil) {
+    private func setImage(with url: URL?, persistent: Bool = false, completion: ((Bool) -> Void)? = nil) {
         urlSessionDataTask?.cancel()
 
         guard let url = url else {
-            completion?()
+            completion?(false)
             return
         }
 
@@ -64,7 +64,7 @@ open class CachedImageView: UIImageView {
             self.requestID == currentRequestID
         }, completion: { image, _ in
             guard let image = image else {
-                completion?()
+                completion?(false)
                 return
             }
 
@@ -75,7 +75,7 @@ open class CachedImageView: UIImageView {
                 animations: { self.image = image }
             )
 
-            completion?()
+            completion?(true)
         })
     }
 }
