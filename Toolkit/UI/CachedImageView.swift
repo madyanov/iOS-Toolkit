@@ -36,7 +36,7 @@ open class CachedImageView: UIImageView {
 
         setImage(with: placeholderURL, persistent: persistent) {
             self.setImage(with: url, persistent: persistent) {
-                guard placeholderURL != nil else {
+                guard url != nil, placeholderURL != nil else {
                     return
                 }
 
