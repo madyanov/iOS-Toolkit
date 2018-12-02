@@ -10,15 +10,15 @@ import Foundation
 import UIKit
 
 open class CachedImageView: UIImageView {
-    private var urlSessionDataTask: URLSessionDataTask?
-    private var requestID = 0
-
     private lazy var blurView: UIVisualEffectView = {
         let visualEffectView = UIVisualEffectView()
         visualEffectView.translatesAutoresizingMaskIntoConstraints = false
         visualEffectView.isHidden = true
         return visualEffectView
     }()
+
+    private var urlSessionDataTask: URLSessionDataTask?
+    private var url: URL?
 
     public convenience init() {
         self.init(frame: .zero)
@@ -36,7 +36,7 @@ open class CachedImageView: UIImageView {
 
         setImage(with: placeholderURL, persistent: persistent) { _ in
             self.setImage(with: url, persistent: persistent) { success in
-                guard success, placeholderURL != nil else {
+                guard self.url == url, success, placeholderURL != nil else {
                     return
                 }
 
@@ -57,11 +57,10 @@ open class CachedImageView: UIImageView {
             return
         }
 
-        requestID += 1
-        let currentRequestID = requestID
+        self.url = url
 
         urlSessionDataTask = ImageCache.shared.load(from: url, persistent: persistent, guard: {
-            self.requestID == currentRequestID
+            self.url == url
         }, completion: { image, _ in
             guard let image = image else {
                 completion?(false)
