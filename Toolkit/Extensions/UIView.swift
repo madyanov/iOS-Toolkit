@@ -115,11 +115,7 @@ public extension UIView {
         startPoint: CGPoint = .zero,
         endPoint: CGPoint = CGPoint(x: 1, y: 1)
     ) -> CAGradientLayer {
-        if let gradientLayer = layer.sublayers?.first as? CAGradientLayer {
-            return gradientLayer
-        }
-
-        let gradientLayer = CAGradientLayer()
+        let gradientLayer = layer.sublayers?.first as? CAGradientLayer ?? CAGradientLayer()
         gradientLayer.frame = bounds
         gradientLayer.colors = colors.map { $0.cgColor }
         gradientLayer.startPoint = startPoint
