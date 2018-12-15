@@ -48,7 +48,7 @@
 		309A0AAD21AFF056000625FE /* PropertyList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 309A0A8921AFF056000625FE /* PropertyList.swift */; };
 		309A0AAE21AFF056000625FE /* Functions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 309A0A8A21AFF056000625FE /* Functions.swift */; };
 		309A0AAF21AFF056000625FE /* CoreData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 309A0A8B21AFF056000625FE /* CoreData.swift */; };
-		309A0AB021AFF056000625FE /* ConditionalPropertiesOverwritingMergePolicy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 309A0A8C21AFF056000625FE /* ConditionalPropertiesOverwritingMergePolicy.swift */; };
+		309A0AB021AFF056000625FE /* ConditionalPropertyOverwritingMergePolicy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 309A0A8C21AFF056000625FE /* ConditionalPropertyOverwritingMergePolicy.swift */; };
 		309A0AB321AFF7BD000625FE /* genstrings.rb in Resources */ = {isa = PBXBuildFile; fileRef = 309A0AB221AFF7BD000625FE /* genstrings.rb */; };
 /* End PBXBuildFile section */
 
@@ -107,7 +107,7 @@
 		309A0A8921AFF056000625FE /* PropertyList.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PropertyList.swift; sourceTree = "<group>"; };
 		309A0A8A21AFF056000625FE /* Functions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Functions.swift; sourceTree = "<group>"; };
 		309A0A8B21AFF056000625FE /* CoreData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreData.swift; sourceTree = "<group>"; };
-		309A0A8C21AFF056000625FE /* ConditionalPropertiesOverwritingMergePolicy.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConditionalPropertiesOverwritingMergePolicy.swift; sourceTree = "<group>"; };
+		309A0A8C21AFF056000625FE /* ConditionalPropertyOverwritingMergePolicy.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConditionalPropertyOverwritingMergePolicy.swift; sourceTree = "<group>"; };
 		309A0AB221AFF7BD000625FE /* genstrings.rb */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.ruby; path = genstrings.rb; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -233,7 +233,7 @@
 				309A0A8921AFF056000625FE /* PropertyList.swift */,
 				309A0A8A21AFF056000625FE /* Functions.swift */,
 				309A0A8B21AFF056000625FE /* CoreData.swift */,
-				309A0A8C21AFF056000625FE /* ConditionalPropertiesOverwritingMergePolicy.swift */,
+				309A0A8C21AFF056000625FE /* ConditionalPropertyOverwritingMergePolicy.swift */,
 			);
 			path = Core;
 			sourceTree = "<group>";
@@ -404,7 +404,7 @@
 				309A0A9D21AFF056000625FE /* String.swift in Sources */,
 				309A0AA121AFF056000625FE /* UINavigationBar.swift in Sources */,
 				309A0A9421AFF056000625FE /* Collection.swift in Sources */,
-				309A0AB021AFF056000625FE /* ConditionalPropertiesOverwritingMergePolicy.swift in Sources */,
+				309A0AB021AFF056000625FE /* ConditionalPropertyOverwritingMergePolicy.swift in Sources */,
 				309A0A9721AFF056000625FE /* UIStackView.swift in Sources */,
 				309A0AA421AFF056000625FE /* Optional.swift in Sources */,
 			);

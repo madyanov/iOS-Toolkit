@@ -1,5 +1,5 @@
 //
-//  ConditionalPropertiesOverwritingMergePolicy.swift
+//  ConditionalPropertyOverwritingMergePolicy.swift
 //  Toolkit
 //
 //  Created by Roman Madyanov on 11/11/2018.
@@ -13,7 +13,7 @@ public protocol PropertiesKeeping {
     func shouldKeepProperty(_ property: String, with value: Any?) -> Bool
 }
 
-public final class ConditionalPropertiesOverwritingMergePolicy: NSMergePolicy {
+public final class ConditionalPropertyOverwritingMergePolicy: NSMergePolicy {
     override public func resolve(constraintConflicts list: [NSConstraintConflict]) throws {
         for conflict in list {
             for conflictingObject in conflict.conflictingObjects {
@@ -38,7 +38,7 @@ public final class ConditionalPropertiesOverwritingMergePolicy: NSMergePolicy {
 }
 
 public extension NSMergePolicy {
-    class var conditionalPropertiesOverwriting: ConditionalPropertiesOverwritingMergePolicy {
-        return ConditionalPropertiesOverwritingMergePolicy(merge: .mergeByPropertyObjectTrumpMergePolicyType)
+    class var conditionalPropertyOverwriting: ConditionalPropertyOverwritingMergePolicy {
+        return ConditionalPropertyOverwritingMergePolicy(merge: .mergeByPropertyObjectTrumpMergePolicyType)
     }
 }
