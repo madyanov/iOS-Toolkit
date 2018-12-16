@@ -9,7 +9,7 @@
 import Foundation
 import CoreData
 
-public protocol PropertiesKeeping {
+public protocol KeepingProperties {
     func shouldKeepProperty(_ property: String, with value: Any?) -> Bool
 }
 
@@ -17,14 +17,14 @@ public final class ConditionalPropertyOverwritingMergePolicy: NSMergePolicy {
     override public func resolve(constraintConflicts list: [NSConstraintConflict]) throws {
         for conflict in list {
             for conflictingObject in conflict.conflictingObjects {
-                guard let propertiesKeeping = conflictingObject as? PropertiesKeeping else {
+                guard let keepingProperties = conflictingObject as? KeepingProperties else {
                     continue
                 }
 
                 for key in conflictingObject.entity.attributesByName.keys {
                     let value = conflict.databaseObject?.value(forKey: key)
 
-                    guard propertiesKeeping.shouldKeepProperty(key, with: value) else {
+                    guard keepingProperties.shouldKeepProperty(key, with: value) else {
                         continue
                     }
 

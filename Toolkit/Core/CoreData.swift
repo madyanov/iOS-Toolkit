@@ -37,7 +37,7 @@ public final class CoreData {
 
     private lazy var operationQueue: OperationQueue = {
         let queue = OperationQueue()
-        queue.maxConcurrentOperationCount = 1
+        queue.maxConcurrentOperationCount = 1 // serial queue
         return queue
     }()
 
