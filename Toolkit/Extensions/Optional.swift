@@ -8,17 +8,6 @@
 
 import Foundation
 
-// MARK: - Convenient unwrapping
-public extension Optional {
-    @discardableResult
-    func unwrap<T>(default: T? = nil, _ block: (Wrapped) -> (T)) -> T? {
-        switch self {
-        case .some(let wrapped): return block(wrapped)
-        case .none: return `default`
-        }
-    }
-}
-
 infix operator ??=
 
 // swiftlint:disable:next static_operator
