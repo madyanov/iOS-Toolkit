@@ -55,9 +55,7 @@ public extension String {
             return hash
         }
 
-        return hash.map {
-            String(format: "%02x", $0)
-        }.joined()
+        return hash.map { String(format: "%02x", $0) }.joined()
     }
 
     var md5: String? {
@@ -71,8 +69,6 @@ public extension String {
             return hash
         }
 
-        return hash.map {
-            String(format: "%02x", $0)
-        }.joined()
+        return hash.map { String(format: "%02x", $0) }.joined()
     }
 }
