@@ -108,28 +108,6 @@ public extension UIView {
     }
 }
 
-// MARK: - Background gradient applying
-public extension UIView {
-    func applyGradient(
-        colors: [UIColor],
-        startPoint: CGPoint = .zero,
-        endPoint: CGPoint = CGPoint(x: 1, y: 1)
-    ) -> CAGradientLayer {
-        let gradientLayer = layer.sublayers?.first as? CAGradientLayer ?? CAGradientLayer()
-        gradientLayer.frame = bounds
-        gradientLayer.colors = colors.map { $0.cgColor }
-        gradientLayer.startPoint = startPoint
-        gradientLayer.endPoint = endPoint
-        layer.insertSublayer(gradientLayer, at: 0)
-
-        if let button = self as? UIButton, let imageView = button.imageView {
-            bringSubviewToFront(imageView)
-        }
-
-        return gradientLayer
-    }
-}
-
 // MARK: - Animation alongside keyboard
 public extension UIView {
     class func animateAlongsideKeyboard(
@@ -137,10 +115,9 @@ public extension UIView {
         animations: @escaping () -> Void,
         completion: ((Bool) -> Void)? = nil
     ) {
-        guard
-            let userInfo = notification.userInfo,
-            let duration = userInfo[UIResponder.keyboardAnimationDurationUserInfoKey] as? NSNumber,
-            let curve = userInfo[UIResponder.keyboardAnimationCurveUserInfoKey] as? NSNumber
+        guard let userInfo = notification.userInfo,
+              let duration = userInfo[UIResponder.keyboardAnimationDurationUserInfoKey] as? NSNumber,
+              let curve = userInfo[UIResponder.keyboardAnimationCurveUserInfoKey] as? NSNumber
         else {
             animations()
             return

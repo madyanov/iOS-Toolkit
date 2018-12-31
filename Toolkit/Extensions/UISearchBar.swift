@@ -12,9 +12,8 @@ import UIKit
 // MARK: - Search field background color
 public extension UISearchBar {
     func setSearchFieldBackgroundColor(_ color: UIColor, cornerRadius: CGFloat = 10) {
-        guard
-            let textField = value(forKey: "searchField") as? UITextField,
-            let backgroundView = textField.subviews.first
+        guard let textField = value(forKey: "searchField") as? UITextField,
+              let backgroundView = textField.subviews.first
         else {
             return
         }

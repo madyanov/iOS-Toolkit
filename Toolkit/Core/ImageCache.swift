@@ -144,9 +144,8 @@ public final class ImageCache {
             return image
         }
 
-        guard
-            let data = try? Data(contentsOf: localURL),
-            let image = UIImage(data: data)
+        guard let data = try? Data(contentsOf: localURL),
+              let image = UIImage(data: data)
         else {
             return nil
         }
@@ -176,9 +175,8 @@ public final class ImageCache {
     }
 
     private func localImageURL(forRemote url: URL) -> URL? {
-        guard
-            let sha1 = url.absoluteString.sha1,
-            let cachedImagesDirectory = cachedImagesDirectory
+        guard let sha1 = url.absoluteString.sha1,
+              let cachedImagesDirectory = cachedImagesDirectory
         else {
             return nil
         }

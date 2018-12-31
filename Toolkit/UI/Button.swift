@@ -18,6 +18,8 @@ open class Button: UIButton {
         didSet { backgroundColor = defaultBackgroundColor }
     }
 
+    private var backgroundGradientLayer: CAGradientLayer?
+
     override open var isHighlighted: Bool {
         didSet {
             if isHighlighted {
@@ -43,5 +45,29 @@ open class Button: UIButton {
     public convenience init() {
         self.init(type: .system)
         setTextStyle(.callout)
+    }
+
+    override open func layoutSubviews() {
+        super.layoutSubviews()
+        backgroundGradientLayer?.frame = bounds
+    }
+
+    public func addGradient(
+        colors: [UIColor],
+        startPoint: CGPoint = .zero,
+        endPoint: CGPoint = CGPoint(x: 1, y: 1)
+    ) {
+        let gradientLayer = backgroundGradientLayer ?? CAGradientLayer()
+        gradientLayer.frame = bounds
+        gradientLayer.colors = colors.map { $0.cgColor }
+        gradientLayer.startPoint = startPoint
+        gradientLayer.endPoint = endPoint
+        layer.insertSublayer(gradientLayer, at: 0)
+        _ = imageView.map { bringSubviewToFront($0) }
+        backgroundGradientLayer = gradientLayer
+    }
+
+    public func removeGradient() {
+        backgroundGradientLayer?.removeFromSuperlayer()
     }
 }
