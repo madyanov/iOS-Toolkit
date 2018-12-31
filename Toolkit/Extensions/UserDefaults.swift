@@ -13,7 +13,7 @@ public class DefaultsKeys {
 }
 
 public class DefaultsKey<T>: DefaultsKeys {
-    let name: String
+    public let name: String
 
     public init(_ name: String) {
         self.name = name
