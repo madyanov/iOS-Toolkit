@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 
-// MARK: - Font adjustement
+// MARK: - Font adjustment
 public extension UILabel {
     func setTextStyle(_ textStyle: UIFont.TextStyle) {
         font = .preferredFont(forTextStyle: textStyle)
