@@ -63,7 +63,7 @@ open class Button: UIButton {
         gradientLayer.startPoint = startPoint
         gradientLayer.endPoint = endPoint
         layer.insertSublayer(gradientLayer, at: 0)
-        _ = imageView.map { bringSubviewToFront($0) }
+        imageView.map { bringSubviewToFront($0) }
         backgroundGradientLayer = gradientLayer
     }
 
