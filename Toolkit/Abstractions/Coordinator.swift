@@ -23,7 +23,7 @@ public extension Coordinator {
 
     func startCoordinator(_ coordinator: Coordinator) {
         guard !hasCoordinator(coordinator) else {
-            print("!!! Coordinator \(String(describing: coordinator)) is already started")
+            assertionFailure("!!! Coordinator \(String(describing: coordinator)) is already started")
             return
         }
 
@@ -33,7 +33,7 @@ public extension Coordinator {
 
     func stopCoordinator(_ coordinator: Coordinator) {
         guard hasCoordinator(coordinator) else {
-            print("!!! Coordinator \(String(describing: coordinator)) is not started")
+            assertionFailure("!!! Coordinator \(String(describing: coordinator)) is not started")
             return
         }
 
