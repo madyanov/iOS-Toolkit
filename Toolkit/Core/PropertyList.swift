@@ -12,7 +12,7 @@ public class PropertyListKeys {
     fileprivate init() { } // swiftlint:disable:this strict_fileprivate
 }
 
-public class PropertyListKey<N, T>: PropertyListKeys {
+public final class PropertyListKey<N, T>: PropertyListKeys {
     let name: String
 
     public init(_ name: String) {
