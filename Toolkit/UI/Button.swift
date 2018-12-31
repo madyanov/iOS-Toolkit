@@ -52,7 +52,7 @@ open class Button: UIButton {
         backgroundGradientLayer?.frame = bounds
     }
 
-    public func addGradient(
+    open func addGradient(
         colors: [UIColor],
         startPoint: CGPoint = .zero,
         endPoint: CGPoint = CGPoint(x: 1, y: 1)
@@ -67,7 +67,7 @@ open class Button: UIButton {
         backgroundGradientLayer = gradientLayer
     }
 
-    public func removeGradient() {
+    open func removeGradient() {
         backgroundGradientLayer?.removeFromSuperlayer()
     }
 }
