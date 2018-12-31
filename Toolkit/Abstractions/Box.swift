@@ -8,14 +8,6 @@
 
 import Foundation
 
-public final class Ref<T> {
-    public var value: T
-
-    public init(value: T) {
-        self.value = value
-    }
-}
-
 public struct Box<T> {
     private var ref: Ref<T>
 
@@ -36,14 +28,22 @@ public struct Box<T> {
     }
 }
 
-public extension Ref where T: Equatable {
-    static func == (left: Ref, right: Ref) -> Bool {
+public extension Box where T: Equatable {
+    static func == (left: Box, right: Box) -> Bool {
         return left.value == right.value
     }
 }
 
-public extension Box where T: Equatable {
-    static func == (left: Box, right: Box) -> Bool {
+public final class Ref<T> {
+    public var value: T
+
+    public init(value: T) {
+        self.value = value
+    }
+}
+
+public extension Ref where T: Equatable {
+    static func == (left: Ref, right: Ref) -> Bool {
         return left.value == right.value
     }
 }
