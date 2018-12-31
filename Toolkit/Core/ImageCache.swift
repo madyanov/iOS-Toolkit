@@ -190,8 +190,8 @@ public final class ImageCache {
     }
 }
 
-public extension ImageCache {
-    enum Error: Swift.Error {
+extension ImageCache {
+    public enum Error: Swift.Error {
         case guarded
         case network(Swift.Error)
         case http(Int)

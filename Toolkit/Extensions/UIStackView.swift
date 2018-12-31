@@ -10,8 +10,8 @@ import Foundation
 import UIKit
 
 // MARK: - Margin
-public extension UIStackView {
-    func margin(_ margins: UIEdgeInsets) {
+extension UIStackView {
+    public func margin(_ margins: UIEdgeInsets) {
         layoutMargins = margins
         isLayoutMarginsRelativeArrangement = true
 

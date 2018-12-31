@@ -10,8 +10,8 @@ import Foundation
 import UIKit
 
 // MARK: - Color
-public extension UIImage {
-    class func withColor(_ color: UIColor, size: CGSize = CGSize(width: 1, height: 1)) -> UIImage {
+extension UIImage {
+    public class func withColor(_ color: UIColor, size: CGSize = CGSize(width: 1, height: 1)) -> UIImage {
         UIGraphicsBeginImageContext(size)
         color.setFill()
         UIRectFill(CGRect(origin: .zero, size: size))

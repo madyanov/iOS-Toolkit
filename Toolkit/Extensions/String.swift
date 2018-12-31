@@ -9,8 +9,8 @@
 import Foundation
 
 // MARK: - Dates
-public extension String {
-    var date: Date? {
+extension String {
+    public var date: Date? {
         let formatter = DateFormatter()
         formatter.dateFormat = "yyyy-MM-dd"
         return formatter.date(from: self)
@@ -18,8 +18,8 @@ public extension String {
 }
 
 // MARK: - Localization
-public extension String {
-    func localized(comment: String, _ arguments: CVarArg...) -> String {
+extension String {
+    public func localized(comment: String, _ arguments: CVarArg...) -> String {
         return String(
             format: NSLocalizedString(self, comment: comment),
             locale: .current,
@@ -29,22 +29,22 @@ public extension String {
 }
 
 // MARK: - Truncating
-public extension String {
-    func truncated(length: Int, trailing: String = "…") -> String {
+extension String {
+    public func truncated(length: Int, trailing: String = "…") -> String {
         return count > length ? prefix(length) + trailing : self
     }
 }
 
 // MARK: - Capitalizing
-public extension String {
-    var capitalizingFirstLetter: String {
+extension String {
+    public var capitalizingFirstLetter: String {
         return prefix(1).uppercased() + dropFirst()
     }
 }
 
 // MARK: - Hashing
-public extension String {
-    var sha1: String? {
+extension String {
+    public var sha1: String? {
         guard let data = self.data(using: .utf8) else {
             return nil
         }
@@ -58,7 +58,7 @@ public extension String {
         return hash.map { String(format: "%02x", $0) }.joined()
     }
 
-    var md5: String? {
+    public var md5: String? {
         guard let data = self.data(using: .utf8) else {
             return nil
         }

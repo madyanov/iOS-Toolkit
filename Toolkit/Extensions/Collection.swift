@@ -9,8 +9,8 @@
 import Foundation
 
 // MARK: - Safe subscription
-public extension Collection {
-    subscript (at index: Index) -> Element? {
+extension Collection {
+    public subscript (at index: Index) -> Element? {
         return indices.contains(index) ? self[index] : nil
     }
 }

@@ -10,8 +10,8 @@ import Foundation
 import UIKit
 
 // MARK: - Rasterization
-public extension CALayer {
-    func rasterize() {
+extension CALayer {
+    public func rasterize() {
         shouldRasterize = true
         rasterizationScale = UIScreen.main.scale
     }

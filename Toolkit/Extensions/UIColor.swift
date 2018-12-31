@@ -10,13 +10,13 @@ import Foundation
 import UIKit
 
 // MARK: - Color presets
-public extension UIColor {
-    static let clearWhite = UIColor.white.withAlphaComponent(0)
+extension UIColor {
+    public static let clearWhite = UIColor.white.withAlphaComponent(0)
 }
 
 // MARK: - Hex colors
-public extension UIColor {
-    convenience init(hex: Int, alpha: CGFloat = 1) {
+extension UIColor {
+    public convenience init(hex: Int, alpha: CGFloat = 1) {
         self.init(
             red: (hex >> 16) & 0xFF,
             green: (hex >> 8) & 0xFF,
@@ -25,7 +25,7 @@ public extension UIColor {
         )
     }
 
-    convenience init(red: Int, green: Int, blue: Int, alpha: CGFloat = 1) {
+    public convenience init(red: Int, green: Int, blue: Int, alpha: CGFloat = 1) {
         self.init(
             red: CGFloat(red) / 255,
             green: CGFloat(green) / 255,
@@ -36,8 +36,8 @@ public extension UIColor {
 }
 
 // MARK: - Random color
-public extension UIColor {
-    static var random: UIColor {
+extension UIColor {
+    public static var random: UIColor {
         return UIColor(
             red: .random,
             green: .random,
@@ -48,16 +48,16 @@ public extension UIColor {
 }
 
 // MARK: - Color blending
-public extension UIColor {
-    func lighterBy(_ by: CGFloat) -> UIColor? {
+extension UIColor {
+    public func lighterBy(_ by: CGFloat) -> UIColor? {
         return blend(with: .white, alpha: by)
     }
 
-    func darkerBy(_ by: CGFloat) -> UIColor? {
+    public func darkerBy(_ by: CGFloat) -> UIColor? {
         return blend(with: .black, alpha: by)
     }
 
-    func blend(with color: UIColor, alpha: CGFloat = 0.5) -> UIColor {
+    public func blend(with color: UIColor, alpha: CGFloat = 0.5) -> UIColor {
         var r1: CGFloat = 0, g1: CGFloat = 0, b1: CGFloat = 0, a1: CGFloat = 0
         var r2: CGFloat = 0, g2: CGFloat = 0, b2: CGFloat = 0, a2: CGFloat = 0
 

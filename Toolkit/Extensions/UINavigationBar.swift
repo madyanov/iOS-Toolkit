@@ -11,7 +11,7 @@ import UIKit
 
 // MARK: - Shadow removing
 extension UINavigationBar {
-    func removeShadow() {
+    public func removeShadow() {
         shadowImage = UIImage()
         setValue(true, forKey: "hidesShadow")
     }
@@ -26,8 +26,8 @@ extension UINavigationBar {
 }
 
 // MARK: - Transparency
-public extension UINavigationBar {
-    func makeTransparent() {
+extension UINavigationBar {
+    public func makeTransparent() {
         removeShadow()
         isTranslucent = true
         setBackgroundImage(UIImage(), for: .default)

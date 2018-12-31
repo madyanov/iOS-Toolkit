@@ -9,8 +9,8 @@
 import Foundation
 
 // MARK: - Clamping
-public extension Comparable {
-    func clamped(to range: ClosedRange<Self>) -> Self {
+extension Comparable {
+    public func clamped(to range: ClosedRange<Self>) -> Self {
         return self < range.lowerBound
             ? range.lowerBound
             : (range.upperBound < self ? range.upperBound : self)

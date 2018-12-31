@@ -9,8 +9,8 @@
 import Foundation
 import UIKit
 
-public extension NSLayoutConstraint {
-    class func activate(_ constraints: [NSLayoutConstraint], priority: UILayoutPriority) {
+extension NSLayoutConstraint {
+    public class func activate(_ constraints: [NSLayoutConstraint], priority: UILayoutPriority) {
         constraints.forEach { $0.priority = priority }
         NSLayoutConstraint.activate(constraints)
     }

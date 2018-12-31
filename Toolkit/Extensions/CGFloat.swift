@@ -10,22 +10,22 @@ import Foundation
 import CoreGraphics
 
 // MARK: - Random number
-public extension CGFloat {
-    static var random: CGFloat {
+extension CGFloat {
+    public static var random: CGFloat {
         return CGFloat(arc4random()) / CGFloat(UInt32.max)
     }
 }
 
 // MARK: - Interpolation
-public extension CGFloat {
-    func interpolated(from: CGFloat = 0, to: CGFloat = 1) -> CGFloat {
+extension CGFloat {
+    public func interpolated(from: CGFloat = 0, to: CGFloat = 1) -> CGFloat {
         return (1 - self) * from + self * to
     }
 }
 
 // MARK: - Sign
-public extension CGFloat {
-    var sign: CGFloat {
+extension CGFloat {
+    public var sign: CGFloat {
         return self >= 0 ? 1 : -1
     }
 }

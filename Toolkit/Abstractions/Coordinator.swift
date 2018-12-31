@@ -17,11 +17,11 @@ public protocol Coordinator: class {
     func stop()
 }
 
-public extension Coordinator {
-    func start() { }
-    func stop() { }
+extension Coordinator {
+    public func start() { }
+    public func stop() { }
 
-    func startCoordinator(_ coordinator: Coordinator) {
+    public func startCoordinator(_ coordinator: Coordinator) {
         guard !hasCoordinator(coordinator) else {
             assertionFailure("!!! Coordinator \(String(describing: coordinator)) is already started")
             return
@@ -31,7 +31,7 @@ public extension Coordinator {
         coordinator.start()
     }
 
-    func stopCoordinator(_ coordinator: Coordinator) {
+    public func stopCoordinator(_ coordinator: Coordinator) {
         guard hasCoordinator(coordinator) else {
             assertionFailure("!!! Coordinator \(String(describing: coordinator)) is not started")
             return
@@ -41,7 +41,7 @@ public extension Coordinator {
         childCoordinators = childCoordinators.filter { $0 !== coordinator }
     }
 
-    func hasCoordinator(_ coordinator: Coordinator) -> Bool {
+    public func hasCoordinator(_ coordinator: Coordinator) -> Bool {
         return childCoordinators.contains { $0 === coordinator }
     }
 }

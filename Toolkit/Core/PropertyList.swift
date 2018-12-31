@@ -50,8 +50,8 @@ public final class PropertyList<N> {
     }
 }
 
-public extension PropertyList {
-    enum Error: Swift.Error {
+extension PropertyList {
+    public enum Error: Swift.Error {
         case fileNotFound
         case fileNotReadable(Swift.Error)
         case invalidPropertyList(Swift.Error)

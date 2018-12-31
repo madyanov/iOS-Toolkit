@@ -10,15 +10,15 @@ import Foundation
 import UIKit
 
 // MARK: - Additional priorities
-public extension UILayoutPriority {
-    static let highest = UILayoutPriority(rawValue: 999)
-    static let lowest = UILayoutPriority(rawValue: 1)
+extension UILayoutPriority {
+    public static let highest = UILayoutPriority(rawValue: 999)
+    public static let lowest = UILayoutPriority(rawValue: 1)
 
-    static func withValue(_ value: Float) -> UILayoutPriority {
+    public static func withValue(_ value: Float) -> UILayoutPriority {
         return UILayoutPriority(rawValue: value)
     }
 
-    static func + (left: UILayoutPriority, right: Float) -> UILayoutPriority {
+    public static func + (left: UILayoutPriority, right: Float) -> UILayoutPriority {
         return UILayoutPriority(rawValue: left.rawValue + right)
     }
 }

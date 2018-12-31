@@ -10,8 +10,8 @@ import Foundation
 import UIKit
 
 // MARK: - Auto Layout
-public extension UIView {
-    func snap(
+extension UIView {
+    public func snap(
         to view: UIView? = nil,
         insets: UIEdgeInsets = .zero,
         safe: Bool = false,
@@ -39,7 +39,7 @@ public extension UIView {
         ], priority: priority)
     }
 
-    func center(in view: UIView? = nil, priority: UILayoutPriority = .required) {
+    public func center(in view: UIView? = nil, priority: UILayoutPriority = .required) {
         guard let view = view ?? superview else {
             return
         }
@@ -50,14 +50,14 @@ public extension UIView {
         ], priority: priority)
     }
 
-    func size(_ size: CGSize) {
+    public func size(_ size: CGSize) {
         NSLayoutConstraint.activate([
             widthAnchor.constraint(equalToConstant: size.width),
             heightAnchor.constraint(equalToConstant: size.height),
         ])
     }
 
-    func snap(
+    public func snap(
         to layoutGuide: UILayoutGuide,
         insets: UIEdgeInsets = .zero,
         safe: Bool = false,
@@ -89,7 +89,7 @@ public extension UIView {
         ], priority: priority)
     }
 
-    func center(in layoutGuide: UILayoutGuide, priority: UILayoutPriority = .required) {
+    public func center(in layoutGuide: UILayoutGuide, priority: UILayoutPriority = .required) {
         NSLayoutConstraint.activate([
             centerXAnchor.constraint(equalTo: layoutGuide.centerXAnchor),
             centerYAnchor.constraint(equalTo: layoutGuide.centerYAnchor),
@@ -98,8 +98,8 @@ public extension UIView {
 }
 
 // MARK: - Safe Area Insets
-public extension UIView {
-    var globalSafeAreaInsets: UIEdgeInsets {
+extension UIView {
+    public var globalSafeAreaInsets: UIEdgeInsets {
         if #available(iOS 11.0, *) {
             return UIApplication.shared.keyWindow?.safeAreaInsets ?? safeAreaInsets
         } else {
@@ -109,8 +109,8 @@ public extension UIView {
 }
 
 // MARK: - Animation alongside keyboard
-public extension UIView {
-    class func animateAlongsideKeyboard(
+extension UIView {
+    public class func animateAlongsideKeyboard(
         _ notification: Notification,
         animations: @escaping () -> Void,
         completion: ((Bool) -> Void)? = nil

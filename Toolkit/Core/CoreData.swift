@@ -79,8 +79,8 @@ public final class CoreData {
     }
 }
 
-public extension CoreData {
-    enum StorageType {
+extension CoreData {
+    public enum StorageType {
         case sqLite
         case inMemory
         case binary

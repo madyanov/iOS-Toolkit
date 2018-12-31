@@ -10,8 +10,8 @@ import Foundation
 import UIKit
 
 // MARK: - Auto Layout
-public extension UILayoutGuide {
-    func snap(
+extension UILayoutGuide {
+    public func snap(
         to view: UIView? = nil,
         insets: UIEdgeInsets = .zero,
         safe: Bool = false,
@@ -39,7 +39,7 @@ public extension UILayoutGuide {
         ], priority: priority)
     }
 
-    func center(in view: UIView? = nil, priority: UILayoutPriority = .required) {
+    public func center(in view: UIView? = nil, priority: UILayoutPriority = .required) {
         guard let view = view ?? owningView else {
             return
         }
@@ -50,14 +50,14 @@ public extension UILayoutGuide {
         ], priority: priority)
     }
 
-    func size(_ size: CGSize) {
+    public func size(_ size: CGSize) {
         NSLayoutConstraint.activate([
             widthAnchor.constraint(equalToConstant: size.width),
             heightAnchor.constraint(equalToConstant: size.height),
         ])
     }
 
-    func snap(
+    public func snap(
         to layoutGuide: UILayoutGuide,
         insets: UIEdgeInsets = .zero,
         safe: Bool = false,
@@ -89,7 +89,7 @@ public extension UILayoutGuide {
         ], priority: priority)
     }
 
-    func center(in layoutGuide: UILayoutGuide, priority: UILayoutPriority = .required) {
+    public func center(in layoutGuide: UILayoutGuide, priority: UILayoutPriority = .required) {
         NSLayoutConstraint.activate([
             centerXAnchor.constraint(equalTo: layoutGuide.centerXAnchor),
             centerYAnchor.constraint(equalTo: layoutGuide.centerYAnchor),

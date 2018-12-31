@@ -28,8 +28,8 @@ public struct Box<T> {
     }
 }
 
-public extension Box where T: Equatable {
-    static func == (left: Box, right: Box) -> Bool {
+extension Box where T: Equatable {
+    public static func == (left: Box, right: Box) -> Bool {
         return left.value == right.value
     }
 }
@@ -42,8 +42,8 @@ public final class Ref<T> {
     }
 }
 
-public extension Ref where T: Equatable {
-    static func == (left: Ref, right: Ref) -> Bool {
+extension Ref where T: Equatable {
+    public static func == (left: Ref, right: Ref) -> Bool {
         return left.value == right.value
     }
 }

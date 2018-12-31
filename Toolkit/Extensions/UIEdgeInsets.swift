@@ -10,24 +10,24 @@ import Foundation
 import UIKit
 
 // MARK: - Convenient initializers
-public extension UIEdgeInsets {
-    var inversed: UIEdgeInsets {
+extension UIEdgeInsets {
+    public var inversed: UIEdgeInsets {
         return UIEdgeInsets(top: -top, left: -left, bottom: -bottom, right: -right)
     }
 
-    var horizontal: CGFloat {
+    public var horizontal: CGFloat {
         return left + right
     }
 
-    var vertical: CGFloat {
+    public var vertical: CGFloat {
         return top + bottom
     }
 
-    init(_ insets: CGFloat) {
+    public init(_ insets: CGFloat) {
         self.init(top: insets, left: insets, bottom: insets, right: insets)
     }
 
-    init(dx: CGFloat, dy: CGFloat) {
+    public init(dx: CGFloat, dy: CGFloat) {
         self.init(top: dy, left: dx, bottom: dy, right: dx)
     }
 }

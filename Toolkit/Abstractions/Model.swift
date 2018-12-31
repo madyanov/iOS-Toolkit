@@ -24,11 +24,11 @@ public protocol Model {
     mutating func merge(_: Self)
 }
 
-public extension Model {
-    mutating func merge(_ model: Self) { }
+extension Model {
+    public mutating func merge(_ model: Self) { }
 
     @discardableResult
-    func propagate(entity: Entity, for context: NSManagedObjectContext) -> Entity {
+    public func propagate(entity: Entity, for context: NSManagedObjectContext) -> Entity {
         entity.willChangeValues()
         fill(entity: entity, for: context)
         entity.didChangeValues()
@@ -42,13 +42,13 @@ public protocol Identifiable: Equatable {
     var id: Identifier { get set }
 }
 
-public extension Identifiable {
-    static func == (left: Self, right: Self) -> Bool {
+extension Identifiable {
+    public static func == (left: Self, right: Self) -> Bool {
         return left.id == right.id
     }
 }
 
-public extension NSManagedObject {
+extension NSManagedObject {
     private var relationships: [String: String] {
         var relationships: [String: String] = [:]
         let className = String(describing: type(of: self))
@@ -66,7 +66,7 @@ public extension NSManagedObject {
         return relationships
     }
 
-    func willChangeValues() {
+    public func willChangeValues() {
         for (name, inverseName) in relationships {
             let relationshipObject = value(forKey: name) as? NSManagedObject
             relationshipObject?.willChangeValue(forKey: inverseName)
@@ -74,7 +74,7 @@ public extension NSManagedObject {
         }
     }
 
-    func didChangeValues() {
+    public func didChangeValues() {
         for (name, inverseName) in relationships {
             let relationshipObject = value(forKey: name) as? NSManagedObject
             relationshipObject?.didChangeValue(forKey: inverseName)

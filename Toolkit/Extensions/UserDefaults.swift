@@ -20,48 +20,48 @@ public class DefaultsKey<T>: DefaultsKeys {
     }
 }
 
-public extension UserDefaults {
-    subscript(key: DefaultsKey<String>) -> String? {
+extension UserDefaults {
+    public subscript(key: DefaultsKey<String>) -> String? {
         get { return string(forKey: key.name) }
         set { set(newValue, forKey: key.name) }
     }
 
-    subscript(key: DefaultsKey<Int>) -> Int {
+    public subscript(key: DefaultsKey<Int>) -> Int {
         get { return integer(forKey: key.name) }
         set { set(newValue, forKey: key.name) }
     }
 
-    subscript(key: DefaultsKey<Float>) -> Float {
+    public subscript(key: DefaultsKey<Float>) -> Float {
         get { return float(forKey: key.name) }
         set { set(newValue, forKey: key.name) }
     }
 
-    subscript(key: DefaultsKey<Double>) -> Double {
+    public subscript(key: DefaultsKey<Double>) -> Double {
         get { return double(forKey: key.name) }
         set { set(newValue, forKey: key.name) }
     }
 
-    subscript(key: DefaultsKey<Bool>) -> Bool {
+    public subscript(key: DefaultsKey<Bool>) -> Bool {
         get { return bool(forKey: key.name) }
         set { set(newValue, forKey: key.name) }
     }
 
-    subscript(key: DefaultsKey<URL>) -> URL? {
+    public subscript(key: DefaultsKey<URL>) -> URL? {
         get { return url(forKey: key.name) }
         set { set(newValue, forKey: key.name) }
     }
 
-    subscript(key: DefaultsKey<Data>) -> Data? {
+    public subscript(key: DefaultsKey<Data>) -> Data? {
         get { return data(forKey: key.name) }
         set { set(newValue, forKey: key.name) }
     }
 
-    subscript<T>(key: DefaultsKey<T>) -> T? {
+    public subscript<T>(key: DefaultsKey<T>) -> T? {
         get { return object(forKey: key.name) as? T }
         set { set(newValue, forKey: key.name) }
     }
 
-    subscript<T: Codable>(key: DefaultsKey<T>) -> T? {
+    public subscript<T: Codable>(key: DefaultsKey<T>) -> T? {
         get {
             guard let data = data(forKey: key.name) else {
                 return object(forKey: key.name) as? T

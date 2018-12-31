@@ -37,8 +37,8 @@ public final class ConditionalPropertyOverwritingMergePolicy: NSMergePolicy {
     }
 }
 
-public extension NSMergePolicy {
-    class var conditionalPropertyOverwriting: ConditionalPropertyOverwritingMergePolicy {
+extension NSMergePolicy {
+    public class var conditionalPropertyOverwriting: ConditionalPropertyOverwritingMergePolicy {
         return ConditionalPropertyOverwritingMergePolicy(merge: .mergeByPropertyObjectTrumpMergePolicyType)
     }
 }

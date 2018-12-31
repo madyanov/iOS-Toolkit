@@ -10,8 +10,8 @@ import Foundation
 import UIKit
 
 // MARK: - Font adjustment
-public extension UITextField {
-    func setTextStyle(_ textStyle: UIFont.TextStyle) {
+extension UITextField {
+    public func setTextStyle(_ textStyle: UIFont.TextStyle) {
         font = .preferredFont(forTextStyle: textStyle)
         adjustsFontForContentSizeCategory = true
     }

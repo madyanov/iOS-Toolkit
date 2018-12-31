@@ -10,20 +10,20 @@ import Foundation
 import UIKit
 
 // MARK: - Font adjustment
-public extension UILabel {
-    func setTextStyle(_ textStyle: UIFont.TextStyle) {
+extension UILabel {
+    public func setTextStyle(_ textStyle: UIFont.TextStyle) {
         font = .preferredFont(forTextStyle: textStyle)
         adjustsFontForContentSizeCategory = true
     }
 }
 
 // MARK: - Truncation checking
-public extension UILabel {
-    var isTruncated: Bool {
+extension UILabel {
+    public var isTruncated: Bool {
         return numberOfLines > 0 && realNumberOfLines > numberOfLines
     }
 
-    var realNumberOfLines: Int {
+    public var realNumberOfLines: Int {
         let height = text?.boundingRect(
             with: CGSize(width: frame.size.width, height: .greatestFiniteMagnitude),
             options: .usesLineFragmentOrigin,
