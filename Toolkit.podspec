@@ -5,7 +5,7 @@ Pod::Spec.new do |s|
   s.homepage      = "https://github.com/madyanov/iOS-Toolkit"
   s.license       = "MIT"
   s.author        = { "Roman Madyanov" => "romantaken@gmail.com" }
-  s.platform      = :ios, "10.3"
+  s.platform      = :ios, "10.0"
   s.source        = { :git => "https://github.com/madyanov/iOS-Toolkit.git", :tag => "#{s.version}" }
   s.source_files  = "Toolkit/**/*"
 end
