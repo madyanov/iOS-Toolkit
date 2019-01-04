@@ -10,7 +10,7 @@ import Foundation
 import CoreData
 
 public protocol KeepingProperties {
-    func shouldKeepProperty(_ property: String, with value: Any?) -> Bool
+    func shouldKeepProperty(_ property: String, databaseValue: Any?, contextValue: Any?) -> Bool
 }
 
 public final class ConditionalPropertyOverwritingMergePolicy: NSMergePolicy {
@@ -22,13 +22,18 @@ public final class ConditionalPropertyOverwritingMergePolicy: NSMergePolicy {
                 }
 
                 for key in conflictingObject.entity.attributesByName.keys {
-                    let value = conflict.databaseObject?.value(forKey: key)
+                    let databaseValue = conflict.databaseObject?.value(forKey: key)
+                    let contextValue = conflictingObject.value(forKey: key)
 
-                    guard keepingProperties.shouldKeepProperty(key, with: value) else {
+                    guard keepingProperties.shouldKeepProperty(
+                        key,
+                        databaseValue: databaseValue,
+                        contextValue: contextValue
+                    ) else {
                         continue
                     }
 
-                    conflictingObject.setValue(value, forKey: key)
+                    conflictingObject.setValue(databaseValue, forKey: key)
                 }
             }
         }
