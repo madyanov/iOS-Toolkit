@@ -10,16 +10,20 @@ import Foundation
 import UIKit
 
 public final class ImageCache {
-    public static let shared = ImageCache()
-
-    private init() { }
+    public static let shared = ImageCache(directoryName: "Cached Images")
 
     private lazy var cache = NSCache<NSURL, CacheRecord>()
+
+    private let directoryName: String
+
+    private init(directoryName: String) {
+        self.directoryName = directoryName
+    }
 
     private lazy var cachedImagesDirectory: URL? = {
         let documentDirectory = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first
 
-        guard let cachedImagesDirectory = documentDirectory?.appendingPathComponent("Cached Images") else {
+        guard let cachedImagesDirectory = documentDirectory?.appendingPathComponent(directoryName) else {
             return nil
         }
 
@@ -69,7 +73,7 @@ public final class ImageCache {
             }
 
             if let httpURLResponse = urlResponse as? HTTPURLResponse,
-                httpURLResponse.statusCode < 200 || httpURLResponse.statusCode >= 300
+               httpURLResponse.statusCode < 200 || httpURLResponse.statusCode >= 300
             {
                 print("!!! Image Cache: load \(url.absoluteString) - HTTP Status Code \(httpURLResponse.statusCode)")
                 DispatchQueue.main.async { completion?(nil, .http(httpURLResponse.statusCode)) }
