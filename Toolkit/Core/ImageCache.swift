@@ -12,13 +12,9 @@ import UIKit
 public final class ImageCache {
     public static let shared = ImageCache(directoryName: "Cached Images")
 
-    private lazy var cache = NSCache<NSURL, CacheRecord>()
-
     private let directoryName: String
 
-    private init(directoryName: String) {
-        self.directoryName = directoryName
-    }
+    private lazy var cache = NSCache<NSURL, CacheRecord>()
 
     private lazy var cachedImagesDirectory: URL? = {
         let documentDirectory = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first
@@ -35,6 +31,10 @@ public final class ImageCache {
 
         return cachedImagesDirectory
     }()
+
+    private init(directoryName: String) {
+        self.directoryName = directoryName
+    }
 
     @discardableResult
     public func load(
