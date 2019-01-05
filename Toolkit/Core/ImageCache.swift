@@ -32,7 +32,7 @@ public final class ImageCache {
         return cachedImagesDirectory
     }()
 
-    private init(directoryName: String) {
+    public init(directoryName: String) {
         self.directoryName = directoryName
     }
 
