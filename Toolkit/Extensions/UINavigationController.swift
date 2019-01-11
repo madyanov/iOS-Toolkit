@@ -11,6 +11,7 @@ import UIKit
 
 // MARK: - Status bar styling
 extension UINavigationController {
+    // swiftlint:disable:next override_in_extension
     override open var preferredStatusBarStyle: UIStatusBarStyle {
         return topViewController?.preferredStatusBarStyle ?? .default
     }

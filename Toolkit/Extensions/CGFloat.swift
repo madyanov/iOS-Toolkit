@@ -9,13 +9,6 @@
 import Foundation
 import CoreGraphics
 
-// MARK: - Random number
-extension CGFloat {
-    public static var random: CGFloat {
-        return CGFloat(arc4random()) / CGFloat(UInt32.max)
-    }
-}
-
 // MARK: - Interpolation
 extension CGFloat {
     public func interpolated(from: CGFloat = 0, to: CGFloat = 1) -> CGFloat {

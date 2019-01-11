@@ -16,6 +16,7 @@ extension UINavigationBar {
         setValue(true, forKey: "hidesShadow")
     }
 
+    // swiftlint:disable:next override_in_extension
     override open func setValue(_ value: Any?, forUndefinedKey key: String) {
         guard key != "hidesShadow" else {
             return
