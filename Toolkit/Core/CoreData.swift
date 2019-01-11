@@ -35,11 +35,7 @@ public final class CoreData {
 
     public lazy var viewContext = persistentContainer.viewContext
 
-    private lazy var operationQueue: OperationQueue = {
-        let queue = OperationQueue()
-        queue.maxConcurrentOperationCount = 1 // serial queue
-        return queue
-    }()
+    private lazy var dispatchQueue = DispatchQueue(label: "com.madyanov.Toolkit.CoreData")
 
     private let completion: ((Error?) -> Void)?
     private let url: URL
@@ -58,7 +54,7 @@ public final class CoreData {
     }
 
     public func performBackgroundTask(_ block: @escaping (NSManagedObjectContext) -> Void) {
-        operationQueue.addOperation {
+        dispatchQueue.async {
             let context = self.persistentContainer.newBackgroundContext()
 
             context.performAndWait {
