@@ -1,7 +1,7 @@
 #!/bin/bash
 
-WORKSPACE="ShowTracker"
-SCHEME="ShowTracker"
+WORKSPACE=""
+SCHEME=""
 LOG_FILE=$(mktemp)
 
 xcodebuild -workspace "$WORKSPACE.xcworkspace" -scheme "$SCHEME" > "$LOG_FILE"
