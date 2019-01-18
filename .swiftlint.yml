@@ -1,9 +1,10 @@
+swiftlint_version: 0.30.0
+
 excluded:
     - Carthage
     - Pods
 
 disabled_rules:
-    - identifier_name
     - large_tuple
     - opening_brace
 
@@ -54,8 +55,10 @@ opt_in_rules:
     - single_test_class
     - sorted_first_last
     - static_operator
+    - strong_iboutlet
     - strict_fileprivate
     - toggle_bool
+    - trailing_closure
     - unavailable_function
     - unneeded_parentheses_in_closure_argument
     - untyped_error_in_catch
@@ -65,8 +68,9 @@ opt_in_rules:
     - yoda_condition
 
 analyzer_rules:
-    - unused_import
     - unused_private_declaration
+
+warning_threshold: 1
 
 file_length: 1000
 type_body_length: 500
@@ -87,6 +91,9 @@ line_length:
 
 trailing_comma:
     mandatory_comma: true
+
+trailing_closure:
+    only_single_muted_parameter: true
 
 custom_rules:
     prohibited_cyrillic:
