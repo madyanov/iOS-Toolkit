@@ -11,12 +11,11 @@ import UIKit
 
 // MARK: - Auto Layout
 extension UILayoutGuide {
-    public func snap(
-        to view: UIView? = nil,
-        insets: UIEdgeInsets = .zero,
-        safe: Bool = false,
-        priority: UILayoutPriority = .required
-    ) {
+    public func snap(to view: UIView? = nil,
+                     insets: UIEdgeInsets = .zero,
+                     safe: Bool = false,
+                     priority: UILayoutPriority = .required)
+    {
         guard let view = view ?? owningView else {
             return
         }
@@ -57,12 +56,11 @@ extension UILayoutGuide {
         ])
     }
 
-    public func snap(
-        to layoutGuide: UILayoutGuide,
-        insets: UIEdgeInsets = .zero,
-        safe: Bool = false,
-        priority: UILayoutPriority = .required
-    ) {
+    public func snap(to layoutGuide: UILayoutGuide,
+                     insets: UIEdgeInsets = .zero,
+                     safe: Bool = false,
+                     priority: UILayoutPriority = .required)
+    {
         guard let superview = owningView else {
             return
         }

@@ -37,13 +37,12 @@ public final class ImageCache {
     }
 
     @discardableResult
-    public func load(
-        from url: URL,
-        persistent: Bool = false,
-        timeout: TimeInterval = 60,
-        guard: (() -> Bool)? = nil,
-        completion: ((UIImage?, Error?) -> Void)? = nil
-    ) -> URLSessionDataTask? {
+    public func load(from url: URL,
+                     persistent: Bool = false,
+                     timeout: TimeInterval = 60,
+                     guard: (() -> Bool)? = nil,
+                     completion: ((UIImage?, Error?) -> Void)? = nil) -> URLSessionDataTask?
+    {
         if let image = image(for: url, persistent: persistent) {
             DispatchQueue.main.async { completion?(image, nil) }
             return nil

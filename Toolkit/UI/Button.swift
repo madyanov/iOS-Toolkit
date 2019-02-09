@@ -52,11 +52,10 @@ open class Button: UIButton {
         backgroundGradientLayer?.frame = bounds
     }
 
-    open func addGradient(
-        colors: [UIColor],
-        startPoint: CGPoint = .zero,
-        endPoint: CGPoint = CGPoint(x: 1, y: 1)
-    ) {
+    open func addGradient(colors: [UIColor],
+                          startPoint: CGPoint = .zero,
+                          endPoint: CGPoint = CGPoint(x: 1, y: 1))
+    {
         let gradientLayer = backgroundGradientLayer ?? CAGradientLayer()
         gradientLayer.frame = bounds
         gradientLayer.colors = colors.map { $0.cgColor }

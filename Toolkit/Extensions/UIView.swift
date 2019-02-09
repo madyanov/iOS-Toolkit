@@ -11,12 +11,11 @@ import UIKit
 
 // MARK: - Auto Layout
 extension UIView {
-    public func snap(
-        to view: UIView? = nil,
-        insets: UIEdgeInsets = .zero,
-        safe: Bool = false,
-        priority: UILayoutPriority = .required
-    ) {
+    public func snap(to view: UIView? = nil,
+                     insets: UIEdgeInsets = .zero,
+                     safe: Bool = false,
+                     priority: UILayoutPriority = .required)
+    {
         guard let view = view ?? superview else {
             return
         }
@@ -57,12 +56,11 @@ extension UIView {
         ])
     }
 
-    public func snap(
-        to layoutGuide: UILayoutGuide,
-        insets: UIEdgeInsets = .zero,
-        safe: Bool = false,
-        priority: UILayoutPriority = .required
-    ) {
+    public func snap(to layoutGuide: UILayoutGuide,
+                     insets: UIEdgeInsets = .zero,
+                     safe: Bool = false,
+                     priority: UILayoutPriority = .required)
+    {
         guard let superview = superview else {
             return
         }
@@ -110,11 +108,10 @@ extension UIView {
 
 // MARK: - Animation alongside keyboard
 extension UIView {
-    public class func animateAlongsideKeyboard(
-        _ notification: Notification,
-        animations: @escaping () -> Void,
-        completion: ((Bool) -> Void)? = nil
-    ) {
+    public class func animateAlongsideKeyboard(_ notification: Notification,
+                                               animations: @escaping () -> Void,
+                                               completion: ((Bool) -> Void)? = nil)
+    {
         guard let userInfo = notification.userInfo,
               let duration = userInfo[UIResponder.keyboardAnimationDurationUserInfoKey] as? NSNumber,
               let curve = userInfo[UIResponder.keyboardAnimationCurveUserInfoKey] as? NSNumber

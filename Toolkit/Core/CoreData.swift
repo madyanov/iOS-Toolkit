@@ -40,11 +40,10 @@ public final class CoreData {
     private let completion: ((Error?) -> Void)?
     private let url: URL
 
-    public init(
-        modelName: String = Bundle.main.bundleIdentifier?.components(separatedBy: ".").last ?? "",
-        storageType: StorageType = .sqLite,
-        completion: ((Error?) -> Void)? = nil
-    ) {
+    public init(modelName: String = Bundle.main.bundleIdentifier?.components(separatedBy: ".").last ?? "",
+                storageType: StorageType = .sqLite,
+                completion: ((Error?) -> Void)? = nil)
+    {
         self.modelName = modelName
         self.storageType = storageType
         self.completion = completion
