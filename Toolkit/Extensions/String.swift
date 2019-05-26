@@ -49,9 +49,9 @@ extension String {
             return nil
         }
 
-        let hash: [UInt8] = data.withUnsafeBytes { (bytes: UnsafePointer<Data>) in
+        let hash: [UInt8] = data.withUnsafeBytes { pointer in
             var hash = [UInt8](repeating: 0, count: Int(CC_SHA1_DIGEST_LENGTH))
-            CC_SHA1(bytes, CC_LONG(data.count), &hash)
+            CC_SHA1(pointer.baseAddress, CC_LONG(data.count), &hash)
             return hash
         }
 
@@ -63,9 +63,9 @@ extension String {
             return nil
         }
 
-        let hash: [UInt8] = data.withUnsafeBytes { (bytes: UnsafePointer<Data>) in
+        let hash: [UInt8] = data.withUnsafeBytes { pointer in
             var hash = [UInt8](repeating: 0, count: Int(CC_MD5_DIGEST_LENGTH))
-            CC_MD5(bytes, CC_LONG(data.count), &hash)
+            CC_MD5(pointer.baseAddress, CC_LONG(data.count), &hash)
             return hash
         }
 
