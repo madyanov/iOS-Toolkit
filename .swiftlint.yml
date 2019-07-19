@@ -82,12 +82,3 @@ trailing_closure:
 
 cyclomatic_complexity:
     ignores_case_statements: true
-
-custom_rules:
-    prohibited_cyrillic:
-        match_kinds:
-            - argument
-            - identifier
-            - parameter
-            - typeidentifier
-        regex: '[а-яА-ЯёЁ]'
