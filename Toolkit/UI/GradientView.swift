@@ -6,10 +6,10 @@
 //  Copyright © 2018 Roman Madyanov. All rights reserved.
 //
 
-import Foundation
 import UIKit
 
-open class GradientView: UIView {
+open class GradientView: UIView
+{
     open var colors: [UIColor] = [] {
         didSet { gradientLayer?.colors = colors.map { $0.cgColor } }
     }
@@ -27,7 +27,10 @@ open class GradientView: UIView {
     override open class var layerClass: AnyClass {
         return CAGradientLayer.self
     }
+}
 
+extension GradientView
+{
     private var gradientLayer: CAGradientLayer? {
         return layer as? CAGradientLayer
     }

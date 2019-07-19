@@ -6,10 +6,10 @@
 //  Copyright © 2018 Roman Madyanov. All rights reserved.
 //
 
-import Foundation
 import CoreData
 
-open class Storage {
+open class Storage
+{
     public let coreData: CoreData
 
     public init(coreData: CoreData) {

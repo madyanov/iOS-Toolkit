@@ -6,13 +6,13 @@
 //  Copyright © 2018 Roman Madyanov. All rights reserved.
 //
 
-import Foundation
-
-public class DefaultsKeys {
+public class DefaultsKeys
+{
     fileprivate init() { } // swiftlint:disable:this strict_fileprivate
 }
 
-public class DefaultsKey<T>: DefaultsKeys {
+public class DefaultsKey<T>: DefaultsKeys
+{
     public let name: String
 
     public init(_ name: String) {
@@ -20,7 +20,8 @@ public class DefaultsKey<T>: DefaultsKeys {
     }
 }
 
-extension UserDefaults {
+extension UserDefaults
+{
     public subscript(key: DefaultsKey<String>) -> String? {
         get { return string(forKey: key.name) }
         set { set(newValue, forKey: key.name) }

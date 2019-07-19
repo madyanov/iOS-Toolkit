@@ -6,10 +6,10 @@
 //  Copyright © 2018 Roman Madyanov. All rights reserved.
 //
 
-import Foundation
 import UIKit
 
-open class Button: UIButton {
+open class Button: UIButton
+{
     open var hightlightedBackgroundColor: UIColor?
     open var disabledBackgroundColor: UIColor?
     open var highlightedAlpha: CGFloat = 1

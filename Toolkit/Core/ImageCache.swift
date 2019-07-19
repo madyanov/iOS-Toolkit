@@ -6,11 +6,30 @@
 //  Copyright © 2018 Roman Madyanov. All rights reserved.
 //
 
-import Foundation
 import UIKit
 
-public final class ImageCache {
+public final class ImageCache
+{
     public static let shared = ImageCache(directoryName: "Cached Images")
+
+    public enum Error: Swift.Error
+    {
+        case guarded
+        case network(Swift.Error)
+        case http(Int)
+        case invalidResponse
+    }
+
+    private class CacheRecord: NSObject
+    {
+        let data: Data
+        let isPersistent: Bool
+
+        init(data: Data, isPersistent: Bool) {
+            self.data = data
+            self.isPersistent = isPersistent
+        }
+    }
 
     private let directoryName: String
 
@@ -130,7 +149,10 @@ public final class ImageCache {
             print("!!! Image Cache: clear - \(error.localizedDescription)")
         }
     }
+}
 
+extension ImageCache
+{
     private func image(for url: URL, persistent: Bool) -> UIImage? {
         guard let localURL = localImageURL(forRemote: url) else {
             return nil
@@ -148,9 +170,9 @@ public final class ImageCache {
         }
 
         guard let data = try? Data(contentsOf: localURL),
-              let image = UIImage(data: data)
-        else {
-            return nil
+            let image = UIImage(data: data)
+            else {
+                return nil
         }
 
         saveDataToMemory(data, persistent: persistent, localURL: localURL)
@@ -179,9 +201,9 @@ public final class ImageCache {
 
     private func localImageURL(forRemote url: URL) -> URL? {
         guard let sha1 = url.absoluteString.sha1,
-              let cachedImagesDirectory = cachedImagesDirectory
-        else {
-            return nil
+            let cachedImagesDirectory = cachedImagesDirectory
+            else {
+                return nil
         }
 
         let fileName = url.lastPathComponent.prefix(16)
@@ -190,26 +212,5 @@ public final class ImageCache {
 
     private func saveDataToMemory(_ data: Data, persistent: Bool, localURL: URL) {
         cache.setObject(CacheRecord(data: data, isPersistent: persistent), forKey: localURL as NSURL)
-    }
-}
-
-extension ImageCache {
-    public enum Error: Swift.Error {
-        case guarded
-        case network(Swift.Error)
-        case http(Int)
-        case invalidResponse
-    }
-}
-
-extension ImageCache {
-    private class CacheRecord: NSObject {
-        let data: Data
-        let isPersistent: Bool
-
-        init(data: Data, isPersistent: Bool) {
-            self.data = data
-            self.isPersistent = isPersistent
-        }
     }
 }

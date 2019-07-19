@@ -6,11 +6,10 @@
 //  Copyright © 2018 Roman Madyanov. All rights reserved.
 //
 
-import Foundation
 import UIKit
 
-// MARK: - Auto Layout
-extension UILayoutGuide {
+extension UILayoutGuide
+{
     public func snap(to view: UIView? = nil,
                      insets: UIEdgeInsets = .zero,
                      safe: Bool = false,

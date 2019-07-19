@@ -6,8 +6,6 @@
 //  Copyright © 2018 Roman Madyanov. All rights reserved.
 //
 
-import Foundation
-
 public func debounce<T>(_ interval: TimeInterval, action: @escaping (T) -> Void) -> ((T) -> Void) {
     var task: DispatchWorkItem?
 

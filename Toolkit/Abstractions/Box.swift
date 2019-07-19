@@ -6,9 +6,8 @@
 //  Copyright © 2018 Roman Madyanov. All rights reserved.
 //
 
-import Foundation
-
-public struct Box<T> {
+public struct Box<T>
+{
     private var ref: Ref<T>
 
     public init(value: T) {
@@ -28,13 +27,15 @@ public struct Box<T> {
     }
 }
 
-extension Box where T: Equatable {
+extension Box where T: Equatable
+{
     public static func == (left: Box, right: Box) -> Bool {
         return left.value == right.value
     }
 }
 
-public final class Ref<T> {
+public final class Ref<T>
+{
     public var value: T
 
     public init(value: T) {
@@ -42,7 +43,8 @@ public final class Ref<T> {
     }
 }
 
-extension Ref where T: Equatable {
+extension Ref where T: Equatable
+{
     public static func == (left: Ref, right: Ref) -> Bool {
         return left.value == right.value
     }

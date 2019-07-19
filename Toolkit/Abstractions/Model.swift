@@ -6,10 +6,10 @@
 //  Copyright © 2018 Roman Madyanov. All rights reserved.
 //
 
-import Foundation
 import CoreData
 
-public protocol Model {
+public protocol Model
+{
     associatedtype Response: Codable
     associatedtype Entity: NSManagedObject
 
@@ -24,7 +24,8 @@ public protocol Model {
     mutating func merge(_: Self)
 }
 
-extension Model {
+extension Model
+{
     public mutating func merge(_ model: Self) { }
 
     @discardableResult
@@ -36,19 +37,22 @@ extension Model {
     }
 }
 
-public protocol Identifiable: Equatable {
+public protocol Identifiable: Equatable
+{
     associatedtype Identifier: Equatable
 
     var id: Identifier { get set }
 }
 
-extension Identifiable {
+extension Identifiable
+{
     public static func == (left: Self, right: Self) -> Bool {
         return left.id == right.id
     }
 }
 
-extension NSManagedObject {
+extension NSManagedObject
+{
     private var relationships: [String: String] {
         var relationships: [String: String] = [:]
         let className = String(describing: type(of: self))

@@ -6,19 +6,23 @@
 //  Copyright © 2018 Roman Madyanov. All rights reserved.
 //
 
-import Foundation
 import CoreGraphics
 
-// MARK: - Interpolation
-extension CGFloat {
+extension CGFloat
+{
     public func interpolated(from: CGFloat = 0, to: CGFloat = 1) -> CGFloat {
         return (1 - self) * from + self * to
     }
 }
 
-// MARK: - Sign
-extension CGFloat {
+extension CGFloat
+{
     public var sign: CGFloat {
         return self >= 0 ? 1 : -1
     }
+}
+
+extension CGFloat
+{
+    public static var standardSpacing: CGFloat { return 8 }
 }

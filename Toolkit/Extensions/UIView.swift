@@ -6,11 +6,10 @@
 //  Copyright © 2018 Roman Madyanov. All rights reserved.
 //
 
-import Foundation
 import UIKit
 
-// MARK: - Auto Layout
-extension UIView {
+extension UIView
+{
     public func snap(to view: UIView? = nil,
                      insets: UIEdgeInsets = .zero,
                      safe: Bool = false,
@@ -95,8 +94,8 @@ extension UIView {
     }
 }
 
-// MARK: - Safe Area Insets
-extension UIView {
+extension UIView
+{
     public var globalSafeAreaInsets: UIEdgeInsets {
         if #available(iOS 11.0, *) {
             return UIApplication.shared.keyWindow?.safeAreaInsets ?? safeAreaInsets
@@ -106,8 +105,8 @@ extension UIView {
     }
 }
 
-// MARK: - Animation alongside keyboard
-extension UIView {
+extension UIView
+{
     public class func animateAlongsideKeyboard(_ notification: Notification,
                                                animations: @escaping () -> Void,
                                                completion: ((Bool) -> Void)? = nil)

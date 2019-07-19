@@ -6,10 +6,10 @@
 //  Copyright © 2018 Roman Madyanov. All rights reserved.
 //
 
-import Foundation
 import UIKit
 
-extension NSLayoutConstraint {
+extension NSLayoutConstraint
+{
     public class func activate(_ constraints: [NSLayoutConstraint], priority: UILayoutPriority) {
         constraints.forEach { $0.priority = priority }
         NSLayoutConstraint.activate(constraints)

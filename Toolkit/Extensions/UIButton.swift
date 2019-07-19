@@ -6,11 +6,10 @@
 //  Copyright © 2018 Roman Madyanov. All rights reserved.
 //
 
-import Foundation
 import UIKit
 
-// MARK: - Images
-extension UIButton {
+extension UIButton
+{
     public func centerTitleAndImageWithSpacing(_ spacing: CGFloat) {
         let insetAmount = spacing / 2
         imageEdgeInsets = UIEdgeInsets(top: 0, left: -insetAmount, bottom: 0, right: insetAmount)
@@ -25,8 +24,8 @@ extension UIButton {
     }
 }
 
-// MARK: - Font adjustment
-extension UIButton {
+extension UIButton
+{
     public func setTextStyle(_ textStyle: UIFont.TextStyle) {
         titleLabel?.font = .preferredFont(forTextStyle: textStyle)
         titleLabel?.adjustsFontForContentSizeCategory = true

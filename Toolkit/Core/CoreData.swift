@@ -6,10 +6,25 @@
 //  Copyright © 2018 Roman Madyanov. All rights reserved.
 //
 
-import Foundation
 import CoreData
 
-public final class CoreData {
+public final class CoreData
+{
+    public enum StorageType
+    {
+        case sqLite
+        case inMemory
+        case binary
+
+        var rawValue: String {
+            switch self {
+            case .sqLite:   return NSSQLiteStoreType
+            case .inMemory: return NSInMemoryStoreType
+            case .binary:   return NSBinaryStoreType
+            }
+        }
+    }
+
     public let modelName: String
     public let storageType: StorageType
 
@@ -61,7 +76,10 @@ public final class CoreData {
             }
         }
     }
+}
 
+extension CoreData
+{
     private class func url(for modelName: String) -> URL {
         let fileName = "\(modelName).sqlite"
         let fileManager = FileManager.default
@@ -71,21 +89,5 @@ public final class CoreData {
         }
 
         return documentDirectory.appendingPathComponent(fileName)
-    }
-}
-
-extension CoreData {
-    public enum StorageType {
-        case sqLite
-        case inMemory
-        case binary
-
-        var rawValue: String {
-            switch self {
-            case .sqLite:   return NSSQLiteStoreType
-            case .inMemory: return NSInMemoryStoreType
-            case .binary:   return NSBinaryStoreType
-            }
-        }
     }
 }

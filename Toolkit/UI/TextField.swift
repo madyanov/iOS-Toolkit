@@ -6,11 +6,11 @@
 //  Copyright © 2018 Roman Madyanov. All rights reserved.
 //
 
-import Foundation
 import UIKit
 
-open class TextField: UITextField {
-    open var insets = UIEdgeInsets(8)
+open class TextField: UITextField
+{
+    open var insets = UIEdgeInsets(.standardSpacing)
 
     override open func textRect(forBounds bounds: CGRect) -> CGRect {
         return bounds.inset(by: insets)

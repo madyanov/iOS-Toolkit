@@ -6,14 +6,15 @@
 //  Copyright © 2018 Roman Madyanov. All rights reserved.
 //
 
-import Foundation
 import CoreData
 
-public protocol KeepingProperties {
+public protocol KeepingProperties
+{
     func shouldKeepProperty(_ property: String, databaseValue: Any?, contextValue: Any?) -> Bool
 }
 
-public final class ConditionalPropertyOverwritingMergePolicy: NSMergePolicy {
+public final class ConditionalPropertyOverwritingMergePolicy: NSMergePolicy
+{
     override public func resolve(constraintConflicts list: [NSConstraintConflict]) throws {
         for conflict in list {
             for conflictingObject in conflict.conflictingObjects {
@@ -42,7 +43,8 @@ public final class ConditionalPropertyOverwritingMergePolicy: NSMergePolicy {
     }
 }
 
-extension NSMergePolicy {
+extension NSMergePolicy
+{
     public class var conditionalPropertyOverwriting: ConditionalPropertyOverwritingMergePolicy {
         return ConditionalPropertyOverwritingMergePolicy(merge: .mergeByPropertyObjectTrumpMergePolicyType)
     }

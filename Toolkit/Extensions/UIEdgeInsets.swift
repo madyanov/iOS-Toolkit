@@ -6,11 +6,10 @@
 //  Copyright © 2018 Roman Madyanov. All rights reserved.
 //
 
-import Foundation
 import UIKit
 
-// MARK: - Convenient initializers
-extension UIEdgeInsets {
+extension UIEdgeInsets
+{
     public var inversed: UIEdgeInsets {
         return UIEdgeInsets(top: -top, left: -left, bottom: -bottom, right: -right)
     }

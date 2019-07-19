@@ -6,16 +6,15 @@
 //  Copyright © 2018 Roman Madyanov. All rights reserved.
 //
 
-import Foundation
 import UIKit
 
-// MARK: - Color presets
-extension UIColor {
+extension UIColor
+{
     public static let clearWhite = UIColor.white.withAlphaComponent(0)
 }
 
-// MARK: - Hex colors
-extension UIColor {
+extension UIColor
+{
     public convenience init(hex: Int, alpha: CGFloat = 1) {
         self.init(
             red: (hex >> 16) & 0xFF,
@@ -35,8 +34,8 @@ extension UIColor {
     }
 }
 
-// MARK: - Random color
-extension UIColor {
+extension UIColor
+{
     public static var random: UIColor {
         return UIColor(
             red: .random(in: 0...1),
@@ -47,8 +46,8 @@ extension UIColor {
     }
 }
 
-// MARK: - Color blending
-extension UIColor {
+extension UIColor
+{
     public func lighterBy(_ by: CGFloat) -> UIColor? {
         return blend(with: .white, alpha: by)
     }
@@ -73,5 +72,17 @@ extension UIColor {
             blue: b1 * (1 - alpha) + b2 * alpha,
             alpha: a1 * (1 - alpha) + a2 * alpha
         )
+    }
+}
+
+extension UIColor
+{
+    public func image(size: CGSize = CGSize(width: 1, height: 1)) -> UIImage {
+        UIGraphicsBeginImageContext(size)
+        self.setFill()
+        UIRectFill(CGRect(origin: .zero, size: size))
+        let image = UIGraphicsGetImageFromCurrentImageContext()
+        UIGraphicsEndImageContext()
+        return image! // swiftlint:disable:this force_unwrapping
     }
 }

@@ -6,10 +6,8 @@
 //  Copyright © 2018 Roman Madyanov. All rights reserved.
 //
 
-import Foundation
-
-// MARK: - Safe subscription
-extension Collection {
+extension Collection
+{
     public subscript (at index: Index) -> Element? {
         return indices.contains(index) ? self[index] : nil
     }

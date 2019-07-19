@@ -6,10 +6,8 @@
 //  Copyright © 2018 Roman Madyanov. All rights reserved.
 //
 
-import Foundation
-
-// MARK: - Clamping
-extension Comparable {
+extension Comparable
+{
     public func clamped(to range: ClosedRange<Self>) -> Self {
         return self < range.lowerBound
             ? range.lowerBound

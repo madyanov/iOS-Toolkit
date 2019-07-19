@@ -6,11 +6,10 @@
 //  Copyright © 2018 Roman Madyanov. All rights reserved.
 //
 
-import Foundation
 import UIKit
 
-// MARK: - Font adjustment
-extension UITextField {
+extension UITextField
+{
     public func setTextStyle(_ textStyle: UIFont.TextStyle) {
         font = .preferredFont(forTextStyle: textStyle)
         adjustsFontForContentSizeCategory = true

@@ -6,11 +6,10 @@
 //  Copyright © 2018 Roman Madyanov. All rights reserved.
 //
 
-import Foundation
 import UIKit
 
-// MARK: - Rasterization
-extension CALayer {
+extension CALayer
+{
     public func rasterize() {
         shouldRasterize = true
         rasterizationScale = UIScreen.main.scale

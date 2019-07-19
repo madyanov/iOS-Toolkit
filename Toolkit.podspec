@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name          = "Toolkit"
-  s.version       = "1.0.0"
+  s.version       = "1.1.0"
   s.summary       = "Swift toolkit for iOS."
   s.homepage      = "https://github.com/madyanov/iOS-Toolkit"
   s.license       = "MIT"

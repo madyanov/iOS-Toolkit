@@ -6,13 +6,13 @@
 //  Copyright © 2018 Roman Madyanov. All rights reserved.
 //
 
-import Foundation
-
-public class PropertyListKeys {
+public class PropertyListKeys
+{
     fileprivate init() { } // swiftlint:disable:this strict_fileprivate
 }
 
-public final class PropertyListKey<N, T>: PropertyListKeys {
+public final class PropertyListKey<N, T>: PropertyListKeys
+{
     let name: String
 
     public init(_ name: String) {
@@ -20,7 +20,15 @@ public final class PropertyListKey<N, T>: PropertyListKeys {
     }
 }
 
-public final class PropertyList<N> {
+public final class PropertyList<N>
+{
+    public enum Error: Swift.Error
+    {
+        case fileNotFound
+        case fileNotReadable(Swift.Error)
+        case invalidPropertyList(Swift.Error)
+    }
+
     private let propertyList: [String: Any]
 
     public init(name: String, extension: String = "plist") throws {
@@ -47,13 +55,5 @@ public final class PropertyList<N> {
 
     public subscript<T>(key: PropertyListKey<N, T>) -> T? {
         return propertyList[key.name] as? T
-    }
-}
-
-extension PropertyList {
-    public enum Error: Swift.Error {
-        case fileNotFound
-        case fileNotReadable(Swift.Error)
-        case invalidPropertyList(Swift.Error)
     }
 }

@@ -63,7 +63,7 @@ opt_in_rules:
     - yoda_condition
 
 analyzer_rules:
-    - unused_private_declaration
+    - unused_declaration
 
 file_length: 1000
 type_body_length: 500

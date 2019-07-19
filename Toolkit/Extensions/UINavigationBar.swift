@@ -6,10 +6,8 @@
 //  Copyright © 2018 Roman Madyanov. All rights reserved.
 //
 
-import Foundation
 import UIKit
 
-// MARK: - Shadow removing
 extension UINavigationBar {
     public func removeShadow() {
         shadowImage = UIImage()
@@ -26,8 +24,8 @@ extension UINavigationBar {
     }
 }
 
-// MARK: - Transparency
-extension UINavigationBar {
+extension UINavigationBar
+{
     public func makeTransparent() {
         removeShadow()
         isTranslucent = true

@@ -6,19 +6,17 @@
 //  Copyright © 2018 Roman Madyanov. All rights reserved.
 //
 
-import Foundation
-
-// MARK: - Dates
-extension String {
-    public var date: Date? {
+extension String
+{
+    public func date(with format: String = "yyyy-MM-dd") -> Date? {
         let formatter = DateFormatter()
-        formatter.dateFormat = "yyyy-MM-dd"
+        formatter.dateFormat = format
         return formatter.date(from: self)
     }
 }
 
-// MARK: - Localization
-extension String {
+extension String
+{
     public func localized(comment: String, _ arguments: CVarArg...) -> String {
         return String(
             format: NSLocalizedString(self, comment: comment),
@@ -28,22 +26,22 @@ extension String {
     }
 }
 
-// MARK: - Truncating
-extension String {
+extension String
+{
     public func truncated(length: Int, trailing: String = "…") -> String {
         return count > length ? prefix(length) + trailing : self
     }
 }
 
-// MARK: - Capitalizing
-extension String {
+extension String
+{
     public var capitalizingFirstLetter: String {
         return prefix(1).uppercased() + dropFirst()
     }
 }
 
-// MARK: - Hashing
-extension String {
+extension String
+{
     public var sha1: String? {
         guard let data = self.data(using: .utf8) else {
             return nil

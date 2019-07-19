@@ -6,10 +6,10 @@
 //  Copyright © 2018 Roman Madyanov. All rights reserved.
 //
 
-import Foundation
 import UIKit
 
-open class CachedImageView: UIImageView {
+open class CachedImageView: UIImageView
+{
     private lazy var blurView: UIVisualEffectView = {
         let visualEffectView = UIVisualEffectView()
         visualEffectView.translatesAutoresizingMaskIntoConstraints = false
@@ -48,7 +48,10 @@ open class CachedImageView: UIImageView {
             }
         }
     }
+}
 
+extension CachedImageView
+{
     private func setImage(with url: URL?, persistent: Bool = false, completion: ((Bool) -> Void)? = nil) {
         urlSessionDataTask?.cancel()
 

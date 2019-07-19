@@ -6,11 +6,10 @@
 //  Copyright © 2018 Roman Madyanov. All rights reserved.
 //
 
-import Foundation
 import UIKit
 
-// MARK: - Additional priorities
-extension UILayoutPriority {
+extension UILayoutPriority
+{
     public static let highest = UILayoutPriority(rawValue: 999)
     public static let lowest = UILayoutPriority(rawValue: 1)
 
@@ -20,5 +19,9 @@ extension UILayoutPriority {
 
     public static func + (left: UILayoutPriority, right: Float) -> UILayoutPriority {
         return UILayoutPriority(rawValue: left.rawValue + right)
+    }
+
+    public static func - (left: UILayoutPriority, right: Float) -> UILayoutPriority {
+        return UILayoutPriority(rawValue: left.rawValue - right)
     }
 }

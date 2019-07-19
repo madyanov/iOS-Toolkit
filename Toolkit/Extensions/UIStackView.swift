@@ -6,11 +6,10 @@
 //  Copyright © 2018 Roman Madyanov. All rights reserved.
 //
 
-import Foundation
 import UIKit
 
-// MARK: - Margin
-extension UIStackView {
+extension UIStackView
+{
     public func margin(_ margins: UIEdgeInsets) {
         layoutMargins = margins
         isLayoutMarginsRelativeArrangement = true

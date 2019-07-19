@@ -6,17 +6,15 @@
 //  Copyright © 2018 Roman Madyanov. All rights reserved.
 //
 
-import Foundation
-
-// MARK: - Stringifying
-extension Date {
+extension Date
+{
     public var year: String {
         return "\(Calendar.current.component(.year, from: self))"
     }
 }
 
-// MARK: - Date difference
-extension Date {
+extension Date
+{
     public func years(since date: Date) -> Int? {
         return Calendar.current.dateComponents([.year], from: date, to: self).year
     }

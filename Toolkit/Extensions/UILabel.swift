@@ -6,19 +6,18 @@
 //  Copyright © 2018 Roman Madyanov. All rights reserved.
 //
 
-import Foundation
 import UIKit
 
-// MARK: - Font adjustment
-extension UILabel {
+extension UILabel
+{
     public func setTextStyle(_ textStyle: UIFont.TextStyle) {
         font = .preferredFont(forTextStyle: textStyle)
         adjustsFontForContentSizeCategory = true
     }
 }
 
-// MARK: - Truncation checking
-extension UILabel {
+extension UILabel
+{
     public var isTruncated: Bool {
         return numberOfLines > 0 && realNumberOfLines > numberOfLines
     }

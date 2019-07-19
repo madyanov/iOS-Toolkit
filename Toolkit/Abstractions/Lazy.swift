@@ -6,9 +6,14 @@
 //  Copyright © 2018 Roman Madyanov. All rights reserved.
 //
 
-import Foundation
+public struct Lazy<T>
+{
+    private enum Value<T>
+    {
+        case none
+        case some(T)
+    }
 
-public struct Lazy<T> {
     private var initializer: () -> T
     private var valueHolder: Value<T> = .none
 
@@ -32,12 +37,5 @@ public struct Lazy<T> {
 
     public mutating func reset() {
         valueHolder = .none
-    }
-}
-
-extension Lazy {
-    private enum Value<T> {
-        case none
-        case some(T)
     }
 }

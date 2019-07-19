@@ -32,7 +32,6 @@
 		309A0A9D21AFF056000625FE /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = 309A0A7721AFF056000625FE /* String.swift */; };
 		309A0A9E21AFF056000625FE /* UserDefaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = 309A0A7821AFF056000625FE /* UserDefaults.swift */; };
 		309A0A9F21AFF056000625FE /* UIButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 309A0A7921AFF056000625FE /* UIButton.swift */; };
-		309A0AA021AFF056000625FE /* UIImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 309A0A7A21AFF056000625FE /* UIImage.swift */; };
 		309A0AA121AFF056000625FE /* UINavigationBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 309A0A7B21AFF056000625FE /* UINavigationBar.swift */; };
 		309A0AA221AFF056000625FE /* CGFloat.swift in Sources */ = {isa = PBXBuildFile; fileRef = 309A0A7C21AFF056000625FE /* CGFloat.swift */; };
 		309A0AA321AFF056000625FE /* UILabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 309A0A7D21AFF056000625FE /* UILabel.swift */; };
@@ -43,7 +42,6 @@
 		309A0AA821AFF056000625FE /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 309A0A8321AFF056000625FE /* Model.swift */; };
 		309A0AA921AFF056000625FE /* Box.swift in Sources */ = {isa = PBXBuildFile; fileRef = 309A0A8421AFF056000625FE /* Box.swift */; };
 		309A0AAA21AFF056000625FE /* Lazy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 309A0A8521AFF056000625FE /* Lazy.swift */; };
-		309A0AAB21AFF056000625FE /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 309A0A8621AFF056000625FE /* Coordinator.swift */; };
 		309A0AAC21AFF056000625FE /* ImageCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = 309A0A8821AFF056000625FE /* ImageCache.swift */; };
 		309A0AAD21AFF056000625FE /* PropertyList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 309A0A8921AFF056000625FE /* PropertyList.swift */; };
 		309A0AAE21AFF056000625FE /* Functions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 309A0A8A21AFF056000625FE /* Functions.swift */; };
@@ -91,7 +89,6 @@
 		309A0A7721AFF056000625FE /* String.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = String.swift; sourceTree = "<group>"; };
 		309A0A7821AFF056000625FE /* UserDefaults.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserDefaults.swift; sourceTree = "<group>"; };
 		309A0A7921AFF056000625FE /* UIButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIButton.swift; sourceTree = "<group>"; };
-		309A0A7A21AFF056000625FE /* UIImage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIImage.swift; sourceTree = "<group>"; };
 		309A0A7B21AFF056000625FE /* UINavigationBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UINavigationBar.swift; sourceTree = "<group>"; };
 		309A0A7C21AFF056000625FE /* CGFloat.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CGFloat.swift; sourceTree = "<group>"; };
 		309A0A7D21AFF056000625FE /* UILabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UILabel.swift; sourceTree = "<group>"; };
@@ -102,7 +99,6 @@
 		309A0A8321AFF056000625FE /* Model.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
 		309A0A8421AFF056000625FE /* Box.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Box.swift; sourceTree = "<group>"; };
 		309A0A8521AFF056000625FE /* Lazy.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Lazy.swift; sourceTree = "<group>"; };
-		309A0A8621AFF056000625FE /* Coordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
 		309A0A8821AFF056000625FE /* ImageCache.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageCache.swift; sourceTree = "<group>"; };
 		309A0A8921AFF056000625FE /* PropertyList.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PropertyList.swift; sourceTree = "<group>"; };
 		309A0A8A21AFF056000625FE /* Functions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Functions.swift; sourceTree = "<group>"; };
@@ -203,7 +199,6 @@
 				309A0A7721AFF056000625FE /* String.swift */,
 				309A0A7821AFF056000625FE /* UserDefaults.swift */,
 				309A0A7921AFF056000625FE /* UIButton.swift */,
-				309A0A7A21AFF056000625FE /* UIImage.swift */,
 				309A0A7B21AFF056000625FE /* UINavigationBar.swift */,
 				309A0A7C21AFF056000625FE /* CGFloat.swift */,
 				309A0A7D21AFF056000625FE /* UILabel.swift */,
@@ -221,7 +216,6 @@
 				309A0A8321AFF056000625FE /* Model.swift */,
 				309A0A8421AFF056000625FE /* Box.swift */,
 				309A0A8521AFF056000625FE /* Lazy.swift */,
-				309A0A8621AFF056000625FE /* Coordinator.swift */,
 			);
 			path = Abstractions;
 			sourceTree = "<group>";
@@ -362,7 +356,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "if which swiftlint >/dev/null; then\n    swiftlint lint --no-cache\nelse\n    echo \"Error: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\n    exit 1\nfi\n";
+			shellScript = "if which swiftlint >/dev/null; then\n    swiftlint lint\nelse\n    echo \"Error: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\n    exit 1\nfi\n";
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -374,7 +368,6 @@
 				309A0A8D21AFF056000625FE /* CachedImageView.swift in Sources */,
 				309A0AA521AFF056000625FE /* UINavigationController.swift in Sources */,
 				309A0AAC21AFF056000625FE /* ImageCache.swift in Sources */,
-				309A0AA021AFF056000625FE /* UIImage.swift in Sources */,
 				309A0AAF21AFF056000625FE /* CoreData.swift in Sources */,
 				309A0AA221AFF056000625FE /* CGFloat.swift in Sources */,
 				309A0AAD21AFF056000625FE /* PropertyList.swift in Sources */,
@@ -399,7 +392,6 @@
 				309A0A8F21AFF056000625FE /* GradientView.swift in Sources */,
 				309A0A9021AFF056000625FE /* Button.swift in Sources */,
 				309A0A9121AFF056000625FE /* CALayer.swift in Sources */,
-				309A0AAB21AFF056000625FE /* Coordinator.swift in Sources */,
 				309A0A9E21AFF056000625FE /* UserDefaults.swift in Sources */,
 				309A0A9D21AFF056000625FE /* String.swift in Sources */,
 				309A0AA121AFF056000625FE /* UINavigationBar.swift in Sources */,
