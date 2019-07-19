@@ -65,16 +65,8 @@ opt_in_rules:
 analyzer_rules:
     - unused_declaration
 
-file_length: 1000
-type_body_length: 500
-function_body_length: 100
-
 identifier_name:
     min_length: 1
-    max_length: 50
-
-type_name:
-    max_length: 50
 
 nesting:
     type_level: 2

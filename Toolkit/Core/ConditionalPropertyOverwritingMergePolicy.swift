@@ -13,6 +13,7 @@ public protocol KeepingProperties
     func shouldKeepProperty(_ property: String, databaseValue: Any?, contextValue: Any?) -> Bool
 }
 
+// swiftlint:disable:next type_name
 public final class ConditionalPropertyOverwritingMergePolicy: NSMergePolicy
 {
     override public func resolve(constraintConflicts list: [NSConstraintConflict]) throws {
