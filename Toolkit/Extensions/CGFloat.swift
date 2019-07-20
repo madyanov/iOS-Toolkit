@@ -25,4 +25,5 @@ extension CGFloat
 extension CGFloat
 {
     public static var standardSpacing: CGFloat { return 8 }
+    public static var tappableSize: CGFloat { return 44 }
 }
