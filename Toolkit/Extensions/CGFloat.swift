@@ -17,9 +17,7 @@ extension CGFloat
 
 extension CGFloat
 {
-    public var sign: CGFloat {
-        return self >= 0 ? 1 : -1
-    }
+    public var sign: CGFloat { return self >= 0 ? 1 : -1 }
 }
 
 extension CGFloat

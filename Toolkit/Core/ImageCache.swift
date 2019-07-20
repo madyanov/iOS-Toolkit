@@ -200,10 +200,11 @@ extension ImageCache
     }
 
     private func localImageURL(forRemote url: URL) -> URL? {
-        guard let sha1 = url.absoluteString.sha1,
+        guard
+            let sha1 = url.absoluteString.sha1,
             let cachedImagesDirectory = cachedImagesDirectory
-            else {
-                return nil
+        else {
+            return nil
         }
 
         let fileName = url.lastPathComponent.prefix(16)
