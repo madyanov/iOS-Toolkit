@@ -25,14 +25,28 @@ public final class CoreData
         }
     }
 
+    public enum ContainerType
+    {
+        case local
+        case cloudKit
+    }
+
     public let modelName: String
     public let storageType: StorageType
+    public let containerType: ContainerType
 
     public lazy var persistentContainer: NSPersistentContainer = {
         let description = NSPersistentStoreDescription(url: url)
         description.type = storageType.rawValue
 
-        let container = NSPersistentContainer(name: modelName)
+        let container: NSPersistentContainer
+
+        if #available(iOS 13.0, *), containerType == .cloudKit {
+            container = NSPersistentCloudKitContainer(name: modelName)
+        } else {
+            container = NSPersistentContainer(name: modelName)
+        }
+
         container.persistentStoreDescriptions = [description]
 
         container.loadPersistentStores { [weak self] _, error in
@@ -57,11 +71,13 @@ public final class CoreData
 
     public init(modelName: String = Bundle.main.bundleIdentifier?.components(separatedBy: ".").last ?? "",
                 storageType: StorageType = .sqLite,
+                containerType: ContainerType = .local,
                 completion: ((Error?) -> Void)? = nil)
     {
         self.modelName = modelName
         self.storageType = storageType
         self.completion = completion
+        self.containerType = containerType
 
         url = CoreData.url(for: modelName)
         print("SQLite database path: \(url.path)")
