@@ -36,17 +36,20 @@ public final class CoreData
     public let containerType: ContainerType
 
     public lazy var persistentContainer: NSPersistentContainer = {
+        let description = NSPersistentStoreDescription(url: url)
+        description.type = storageType.rawValue
+
         let container: NSPersistentContainer
 
         if #available(iOS 13.0, *), containerType == .cloudKit {
             container = NSPersistentCloudKitContainer(name: modelName)
+            description.cloudKitContainerOptions =
+                NSPersistentCloudKitContainerOptions(containerIdentifier: "iCloud.com.madyanov.ShowTracker")
         } else {
             container = NSPersistentContainer(name: modelName)
             print("!!! CoreData: fallback to local persistent container")
         }
 
-        let description = NSPersistentStoreDescription(url: url)
-        description.type = storageType.rawValue
         container.persistentStoreDescriptions = [description]
 
         container.loadPersistentStores { [weak self] _, error in
