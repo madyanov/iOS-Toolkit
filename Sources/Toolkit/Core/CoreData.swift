@@ -28,7 +28,7 @@ public final class CoreData
     public enum ContainerType
     {
         case local
-        case cloudKit
+        case cloudKit(containerIdentifier: String)
     }
 
     public let modelName: String
@@ -41,10 +41,10 @@ public final class CoreData
 
         let container: NSPersistentContainer
 
-        if #available(iOS 13.0, *), containerType == .cloudKit {
+        if #available(iOS 13.0, *), case .cloudKit(let containerIdentifier) = containerType {
             container = NSPersistentCloudKitContainer(name: modelName)
             description.cloudKitContainerOptions =
-                NSPersistentCloudKitContainerOptions(containerIdentifier: "iCloud.com.madyanov.ShowTracker")
+                NSPersistentCloudKitContainerOptions(containerIdentifier: containerIdentifier)
         } else {
             container = NSPersistentContainer(name: modelName)
             print("!!! CoreData: fallback to local persistent container")
