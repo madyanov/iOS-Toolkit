@@ -54,7 +54,7 @@ public final class CoreData
 
         container.loadPersistentStores { [weak self] _, error in
             if let error = error {
-                print("!!! CoreData Error: \(error.localizedDescription)")
+                assertionFailure("!!! CoreData: \(error.localizedDescription)")
             } else {
                 container.viewContext.automaticallyMergesChangesFromParent = true
             }
